@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Résultats de recherche d'emploi</title>
+  <style>
+    body { font-family: sans-serif; margin: 20px; }
+    .job { border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; }
+    .site { font-size: 0.9em; color: #555; }
+  </style>
+</head>
+<body>
+  <h1>Offres trouvées</h1>
+  <p>Ville : <%= city %> — Intitulé : <%= title_query %></p>
+
+  <% jobs.each do |job| %>
+    <div class="job">
+      <div class="site"><%= job[:site] %></div>
+      <h2><a href="<%= job[:url] %>" target="_blank"><%= job[:title] %></a></h2>
+      <p><%= job[:snippet] %></p>
+    </div>
+  <% end %>
+</body>
+</html>
+
