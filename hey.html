@@ -1,0 +1,18 @@
+<textarea id="mytextarea">
+</textarea>
+<button onclick="ecrireOffre();return false;">
+ecrire l'offre
+</button>
+<label for="title"><input type="radio" id="title" name="partoffer" value="title" />title</label>
+<label for="content"><input type="radio" id="content" name="partoffer" value="content" />content</label>
+<div id="myinfo"></div>
+<div id="monoffre"></div>
+<script>
+function ecrireOffre(){
+monoffre.innerHTML=mytextarea.value;
+}
+monoffre.onclick=function(e){
+myinfo.innerHTML=document.querySelector('[name=partoffer]:checked').value+" : Class Name : "+e.target.className+ "-- Tag Name : " +e.target.tagName + "--- Id : "+e.target.id;
+return false;
+}
+</script>
